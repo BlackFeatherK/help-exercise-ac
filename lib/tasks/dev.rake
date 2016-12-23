@@ -22,6 +22,13 @@ namespace :dev do
                             :user => users.sample )
       end
     end
+
+    Message.all.each do |message|
+      message.likes.create(:user => users.sample)
+      message.likes.create(:user => users.sample)
+      message.subscribes.create(:user => users.sample)
+      message.subscribes.create(:user => users.sample)
+    end
   end
 
 end
